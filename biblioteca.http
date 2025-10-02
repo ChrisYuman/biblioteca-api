@@ -12,3 +12,40 @@ GET http://localhost:3000/api/libros/id-invalido-123
 
 ### 5. Intentar obtener un libro con un UUID válido pero que no existe (Error 404)
 GET http://localhost:3000/api/libros/831ceef8-8ea0-55e5-94ce-58c502a8ad4c
+
+### 6. Crear un libro exitosamente (Respuesta 201)
+POST http://localhost:3000/api/libros
+Content-Type: application/json
+
+{
+  "title": "El amor en los tiempos del cóler",
+  "author": "Gabriel García Márque",
+  "year": 1985
+}
+
+### 7. Intentar crear un libro con campos faltantes (Error 400)
+POST http://localhost:3000/api/libros
+Content-Type: application/json
+
+{
+  "title": "El Aleph"
+}
+
+### 8. Intentar crear un libro duplicado (Error 409)
+POST http://localhost:3000/api/libros
+Content-Type: application/json
+
+{
+  "title": "Cien años de soledad",
+  "author": "Gabriel García Márquez",
+  "year": 1967
+}
+
+### 9. Eliminar un libro existente (Éxito 200)
+DELETE http://localhost:3000/api/libros/ccf1ebda-6625-4337-938c-c464f3f358cd
+
+### 10. Intentar eliminar un libro que no existe (Error 404)
+DELETE http://localhost:3000/api/libros/831ceef8-8ea0-55e5-94ce-58c502a8ad4c
+
+### 11. Intentar eliminar con un ID de formato inválido (Error 400)
+DELETE http://localhost:3000/api/libros/id-invalido-123
