@@ -1,0 +1,14 @@
+### 1. Obtener todos los libros
+GET http://localhost:3000/api/libros
+
+### 2. Filtrar libros por año
+GET http://localhost:3000/api/libros?year=1967
+
+### 3. Obtener un libro por su ID
+GET http://localhost:3000/api/libros/831ceef8-7ea0-44d5-94ce-58c502a8ad4c
+
+### 4. Intentar obtener un libro con un ID de formato inválido (Error 400)
+GET http://localhost:3000/api/libros/id-invalido-123
+
+### 5. Intentar obtener un libro con un UUID válido pero que no existe (Error 404)
+GET http://localhost:3000/api/libros/831ceef8-8ea0-55e5-94ce-58c502a8ad4c
