@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     const { year } = req.query;
 
     if (year) {
-        const librosFiltrados = libros.filter(libro => libro.year === parseInt(year));
+        const librosFiltrados = libros.filter(libro => libro.year === Number.parseInt(year));
         return res.json(librosFiltrados);
     }
     res.json(libros);

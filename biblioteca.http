@@ -41,6 +41,7 @@ Content-Type: application/json
   "year": 1967
 }
 
+
 ### 9. Eliminar un libro existente (Éxito 200)
 DELETE http://localhost:3000/api/libros/ccf1ebda-6625-4337-938c-c464f3f358cd
 
